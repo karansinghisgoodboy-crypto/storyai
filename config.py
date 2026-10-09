@@ -1,9 +1,4 @@
-"""Central configuration.
-
-Reads ".env" (if it exists) and exposes plain settings.
-The OpenAI key is read here for later steps. It is only ever used by backend
-code and is never sent to the browser or stored in the database.
-"""
+"""Central configuration for StoryAI."""
 import os
 from pathlib import Path
 
@@ -22,7 +17,13 @@ class Config:
     UPLOAD_DIR = Path(os.getenv("UPLOAD_DIR") or BASE_DIR / "uploads")
     LOG_PATH = BASE_DIR / "storyai.log"
 
-    # AI (used from the chat step onward)
+    # AI providers; local Ollama is the default, OpenAI is optional.
+    AI_PROVIDER = (os.getenv("AI_PROVIDER", "ollama").strip().lower() or "ollama")
+    OLLAMA_BASE_URL = (
+        os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434").strip().rstrip("/")
+        or "http://127.0.0.1:11434"
+    )
+    OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.2:3b").strip() or "llama3.2:3b"
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
     OPENAI_MODEL = os.getenv("OPENAI_MODEL", "")
 

@@ -8,8 +8,8 @@ StoryAI is a local Flask + SQLite + vanilla JavaScript workspace for developing 
 - Secure image uploads for character/location/storyboard assets
 - Location library with name, description and atmosphere (stored in the existing `mood` field)
 - Story, scenes, characters-in-scenes and storyboard shots
-- AI chat through the backend using the OpenAI Responses API
-- Optional web search mode attached to chat
+- AI chat and suggestions through local Ollama by default, with optional OpenAI provider
+- Optional OpenAI web search mode (not available through local Ollama)
 - Suggestion/proposal workflow: AI suggestions never become canon automatically
 - Structured memory
 - Rule-based continuity checker with dismiss fingerprints
@@ -28,18 +28,29 @@ notepad .env
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-In the local `.env` file, add your own OpenAI API key to `OPENAI_API_KEY` if you
-want to use AI chat or suggestions. `OPENAI_MODEL` is optional; when blank, the
-application uses `gpt-5-mini`. The application can also run without an API key,
-but AI features will not be available.
-
-Start StoryAI:
+The default provider uses Ollama locally and does not need an OpenAI API key or
+credits. In one PowerShell window, start Ollama:
 
 ```powershell
+ollama serve
+```
+
+In a second PowerShell window, from the StoryAI project folder, download the
+configured model and start StoryAI:
+
+```powershell
+ollama pull llama3.2:3b
 .\.venv\Scripts\python.exe app.py
 ```
 
-Open `http://127.0.0.1:5000`. Run the test suite with:
+Open `http://127.0.0.1:5000`. `AI_PROVIDER`, `OLLAMA_BASE_URL`, and
+`OLLAMA_MODEL` can be adjusted in the local `.env` if needed. Ollama search mode
+is not supported; select OpenAI to use web search.
+
+To use OpenAI instead, set `AI_PROVIDER=openai` in `.env` and provide your own
+`OPENAI_API_KEY`. `OPENAI_MODEL` is optional and defaults to `gpt-5-mini`.
+
+Run the test suite with:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest

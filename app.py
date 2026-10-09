@@ -18,6 +18,7 @@ from routes.locations import bp as locations_bp
 from routes.story import bp as story_bp
 from routes.scenes import bp as scenes_bp
 from routes.shots import bp as shots_bp
+from routes.storyboard import bp as storyboard_bp
 from routes.chat import bp as chat_bp
 from routes.memory import bp as memory_bp
 from routes.proposals import bp as proposals_bp
@@ -54,6 +55,7 @@ def create_app(test_config=None):
     app.register_blueprint(story_bp)
     app.register_blueprint(scenes_bp)
     app.register_blueprint(shots_bp)
+    app.register_blueprint(storyboard_bp)
     app.register_blueprint(chat_bp)
     app.register_blueprint(memory_bp)
     app.register_blueprint(proposals_bp)

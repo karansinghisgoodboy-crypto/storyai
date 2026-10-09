@@ -36,3 +36,135 @@ Traceback (most recent call last):
   File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\PIL\PngImagePlugin.py", line 223, in crc
     raise SyntaxError(msg)
 SyntaxError: broken PNG file (bad header checksum in b'IDAT')
+2026-10-09 18:16:08,863 ERROR AI request failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\services\chat.py", line 25, in call_ai
+    response=client.responses.create(model=model,input=[{'role':'system','content':_prompt(context(db,pid))},{'role':'user','content':message}],tools=tools)
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\resources\responses\responses.py", line 1055, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/responses",
+        ^^^^^^^^^^^^^
+    ...<48 lines>...
+        stream_cls=Stream[ResponseStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\_base_client.py", line 1440, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\_base_client.py", line 1213, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-10-09 19:41:55,311 ERROR AI request failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\services\chat.py", line 25, in call_ai
+    )
+    
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\resources\responses\responses.py", line 1055, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/responses",
+        ^^^^^^^^^^^^^
+    ...<48 lines>...
+        stream_cls=Stream[ResponseStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\_base_client.py", line 1440, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\_base_client.py", line 1213, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-10-09 20:52:58,496 ERROR AI request failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\services\chat.py", line 25, in call_ai
+    )
+    
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\resources\responses\responses.py", line 1055, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/responses",
+        ^^^^^^^^^^^^^
+    ...<48 lines>...
+        stream_cls=Stream[ResponseStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\_base_client.py", line 1440, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\_base_client.py", line 1213, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-10-09 21:14:46,670 ERROR AI request failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\services\chat.py", line 25, in call_ai
+    )
+    
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\resources\responses\responses.py", line 1055, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/responses",
+        ^^^^^^^^^^^^^
+    ...<48 lines>...
+        stream_cls=Stream[ResponseStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\_base_client.py", line 1440, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\_base_client.py", line 1213, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-10-09 21:22:10,374 ERROR AI request failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\services\chat.py", line 25, in call_ai
+    )
+    
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\resources\responses\responses.py", line 1055, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/responses",
+        ^^^^^^^^^^^^^
+    ...<48 lines>...
+        stream_cls=Stream[ResponseStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\_base_client.py", line 1440, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\_base_client.py", line 1213, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-10-09 21:37:19,294 ERROR AI request failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\services\chat.py", line 25, in call_ai
+    )
+    
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\resources\responses\responses.py", line 1055, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/responses",
+        ^^^^^^^^^^^^^
+    ...<48 lines>...
+        stream_cls=Stream[ResponseStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\_base_client.py", line 1440, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\openai\_base_client.py", line 1213, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-10-09 21:50:06,300 WARNING Ollama request failed: server unavailable or timed out.
+2026-10-09 22:57:30,065 WARNING Ollama request failed: server unavailable or timed out.
+2026-10-09 23:00:55,466 WARNING Ollama request failed: server unavailable or timed out.
+2026-10-09 23:16:51,538 WARNING Ollama request failed: server unavailable or timed out.
+2026-10-09 23:27:12,296 WARNING Ollama request failed: server unavailable or timed out.
+2026-10-10 00:02:22,434 WARNING Ollama request failed: server unavailable or timed out.
+2026-10-10 01:28:18,892 WARNING Ollama request failed: server unavailable or timed out.
