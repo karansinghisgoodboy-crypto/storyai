@@ -1,0 +1,38 @@
+2026-10-09 02:39:31,475 ERROR Unexpected error on POST /api/projects/1/characters
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\routes\characters.py", line 13, in create
+    def create(project_id): return jsonify(character=service.create_character(get_db(), project_id, json_body())), 201
+                                                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\services\characters.py", line 50, in create_character
+    cur = db.execute(f"INSERT INTO characters ({cols}) VALUES ({qs})", vals+[now,now])
+sqlite3.IntegrityError: NOT NULL constraint failed: characters.project_id
+2026-10-09 04:33:02,399 ERROR Unexpected error on POST /api/projects/1/locations/1/image
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\routes\locations.py", line 23, in image
+    def image(project_id,location_id): return jsonify(location=save_generic_image(get_db(),current_app.config['UPLOAD_DIR'],project_id,'location',location_id,request.files.get('image')))
+                                                               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\services\uploads.py", line 116, in save_generic_image
+    main, thumb, now = _process(upload_dir, subfolder, kind, project_id, file_storage)
+                       ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\services\uploads.py", line 46, in _process
+    image.verify()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\PIL\PngImagePlugin.py", line 860, in verify
+    self.png.verify()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\PIL\PngImagePlugin.py", line 250, in verify
+    self.crc(cid, ImageFile._safe_read(self.fp, length))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\StoryAI_Complete_MVP_UI_Refreshed\storyai\.venv\Lib\site-packages\PIL\PngImagePlugin.py", line 223, in crc
+    raise SyntaxError(msg)
+SyntaxError: broken PNG file (bad header checksum in b'IDAT')
