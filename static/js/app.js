@@ -1,0 +1,1 @@
+function route(){State.navId++;const m=location.hash.match(/^#\/project\/(\d+)(?:\/([a-z-]+))?$/);if(m)WorkspaceScreen.show(Number(m[1]),m[2]);else ProjectsScreen.show()}addEventListener('hashchange',route);route();

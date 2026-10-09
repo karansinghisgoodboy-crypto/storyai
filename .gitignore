@@ -1,0 +1,76 @@
+# Local secrets and environment files. Keep example templates trackable.
+.env
+.env.*
+.envrc
+.flaskenv
+.flaskenv.*
+*.env
+*.env.*
+!.env.example
+!*.env.example
+secrets/
+*.pem
+*.p12
+*.pfx
+*.key
+*.secret
+*.secrets
+
+# Python environments and bytecode
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+
+# Test, lint, and coverage caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local SQLite databases and journals. Schema and migration SQL remain trackable.
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+
+# User uploads and generated runtime data; allow placeholders in kept directories.
+/uploads/**
+uploads/
+!/uploads/**/
+!/uploads/.gitkeep
+!/uploads/**/.gitkeep
+
+# Logs and temporary/generated files
+*.log
+*.log.*
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+tmp/
+temp/
+release*.zip
+*-release*.zip
+*_release*.zip
+release/
+dist/
+
+# Local JavaScript dependencies
+node_modules/
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/

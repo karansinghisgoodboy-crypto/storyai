@@ -1,0 +1,8 @@
+{
+  "name": "storyai-ui-smoke-test",
+  "private": true,
+  "description": "Optional browser-simulation test for StoryAI. Not part of the app.",
+  "devDependencies": {
+    "jsdom": "^26.0.0"
+  }
+}

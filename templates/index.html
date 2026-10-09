@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>StoryAI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/studio.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">StoryAI</a>
+  </header>
+  <main id="app" class="page"></main>
+  <script src="{{ url_for('static', filename='js/dom.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/state.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/autosave.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/screens/characters.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/screens/projects.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/screens/locations.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/screens/workspace.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
